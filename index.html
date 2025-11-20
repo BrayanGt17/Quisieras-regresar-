@@ -3,106 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Quieres Reegresar😓?</title>
     <style>
-    /* --- INICIO DE CAMBIOS DE ESTILO --- */
-
     body {
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 100vh; /* Usar min-height para evitar cortes en móviles */
+        height: 100vh;
         margin: 0;
-        font-family: sans-serif; /* Fuente más moderna por defecto */
-        /* Nuevo fondo con degradado morado */
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: #333; /* Color de texto base */
+        background-color: #ffffff;
     }
 
-    /* Nuevo estilo para el contenedor principal para que resalte sobre el fondo */
     .container {
         text-align: center;
-        background-color: rgba(255, 255, 255, 0.9); /* Blanco semitransparente */
-        padding: 40px;
-        border-radius: 20px; /* Bordes redondeados */
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra suave */
-        max-width: 90%; /* Para que no se pegue a los bordes en móviles */
-    }
-
-    /* Asegurar que las imágenes no se salgan del contenedor */
-    img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
     }
 
     #gifContainerImg {
-        /* width: 60%;  Eliminado para usar max-width general */
-        /* height: 60%; Eliminado para mantener proporción */
-        max-height: 300px; /* Altura máxima inicial */
+        width: 60%;
+        height: 60%;
     }
 
-    /* Estilo para el título */
-    #question {
-        color: #4A00E0; /* Morado oscuro */
-        font-size: 2rem;
-        margin-bottom: 30px;
-    }
-
-    /* Estilos generales para botones */
     button {
-        padding: 15px 30px;
-        font-size: 18px;
-        margin: 15px;
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 10px;
         cursor: pointer;
-        border: none; /* Quitamos bordes feos por defecto */
-        border-radius: 50px; /* Botones muy redondos */
-        font-weight: bold;
-        transition: transform 0.2s, box-shadow 0.2s; /* Animación suave al pasar el mouse */
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
-
-    /* Estilos específicos Botón SÍ */
     #siBtn {
-        /* Degradado morado vibrante */
-        background: linear-gradient(45deg, #da22ff, #9733ee);
+        padding: 10px 20px; 
+        font-size: 16px;
+        margin: 10px;
+        cursor: pointer;
+        background-color: #9b59b6; /* Morado Claro (Antes Verde) */
         color: white;
+        border: 2px solid #d7bde2; /* Bordes lila (Antes rosa) */
+        border-radius: 10px; /* Esquinas redondeadas */
     }
 
-    /* Estilos específicos Botón NO */
     #noBtn {
-        /* Degradado rojizo/morado oscuro para contraste */
-        background: linear-gradient(45deg, #FF512F, #DD2476);
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 10px;
+        cursor: pointer;
+        background-color: #512E5F; /* Morado Oscuro (Antes Rojo) */
         color: white;
+        border: 2px solid #d7bde2; /* Bordes lila (Antes rosa) */
+        border-radius: 10px; /* Esquinas redondeadas */
     }
-    
-    /* Efectos al pasar el mouse (Hover) */
-    #siBtn:hover, #noBtn:hover {
-        transform: translateY(-3px); /* Se eleva un poco */
-        box-shadow: 0 8px 25px rgba(0,0,0,0.3); /* Sombra más intensa */
-    }
-   
-    /* Esta clase se añade en el JS al final. La cambiamos de blanco a un degradado de celebración */
-    .bg-green {
-         background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%) !important; /* Degradado suave pastel */
+    #noBtn span {
+        font-size: 18px;
+        color: #fcf4f4; 
     }
 
-    /* Estilo del mensaje final */
+    #siBtn:hover{
+        background-color: #8e44ad; /* Morado más intenso en hover */
+    }
+    #noBtn:hover {
+        background-color: #4A235A; /* Morado muy oscuro en hover */
+    }
+    .bg-green {
+        background-color: #ffffff; 
+    }
+
     #messageContainer {
-        font-size: 32px;
-        font-weight: bold;
-        color: #4A00E0; /* Cambiado de rojo a morado */
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Sombra de texto más sutil */
-        animation: pulse 0.8s infinite alternate ease-in-out; /* Animación más suave */
-        margin-bottom: 20px;
+        font-size: 30px;
+        color: #8e44ad; /* Texto Morado (Antes Rojo) */
+        font-family: 'YourDesiredFont', sans-serif; 
+        text-shadow: 2px 2px 4px #d7bde2; /* Borde simulado lila */
+        animation: pulse 0.5s infinite alternate; 
     }
 
     @keyframes pulse {
-        from { transform: scale(1); }
-        to { transform: scale(1.1); }
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(1.3); 
+        }
     }
-    
-    /* --- FIN DE CAMBIOS DE ESTILO --- */
     </style>
 </head>
 <body>
@@ -141,7 +120,7 @@
         
     </div>
     <script>
-    // Script solicitado - EXACTAMENTE EL MISMO QUE PROPORCIONASTE
+    // Script solicitado
     let noButtonClickCount = 0; // Contador para el botón "No"
     let noButtonState = 0; // Estado actual del botón "No"
 
@@ -228,7 +207,7 @@
 
                 // Modificar el botón "No"
                 document.getElementById('noBtn').innerHTML = '¿No quieres regresar conmigo?';
-                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
                 document.getElementById('siBtn').style.fontSize = '40px';
                 document.getElementById('siBtn').style.padding = '20px 40px';
                 noButtonClickCount++;
@@ -238,7 +217,7 @@
             case 1:
                 // Segunda vez haciendo clic en "No"
                 document.getElementById('noBtn').innerHTML = '¿Segura que no quieres volver?🥹';
-                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
                 // Ocultar la imagen personalizada si existe
                 let customSadImg1 = document.getElementById('customSadImg');
                 if (customSadImg1) customSadImg1.style.display = 'none';
@@ -266,7 +245,7 @@
 
             case 2:
                 document.getElementById('noBtn').innerHTML = '¿No extrañas lo nuestro?';
-                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
                 // Ocultar la segunda imagen personalizada si existe
                 let customSadImg2b = document.getElementById('customSadImg2');
                 if (customSadImg2b) customSadImg2b.style.display = 'none';
@@ -295,7 +274,7 @@
 
             case 3:
                 document.getElementById('noBtn').innerHTML = '¿No te gustaría intentarlo otra vez?';
-                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
                 // Ocultar la tercera imagen personalizada si existe
                 let customSadImg3b = document.getElementById('customSadImg3');
                 if (customSadImg3b) customSadImg3b.style.display = 'none';
@@ -321,7 +300,7 @@
 
             case 4:
                 document.getElementById('noBtn').innerHTML = 'Dame otra oportunidad, por favor';
-                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
                 // Ocultar la cuarta imagen personalizada si existe
                 let customSadImg4b = document.getElementById('customSadImg4');
                 if (customSadImg4b) customSadImg4b.style.display = 'none';
@@ -346,7 +325,7 @@
                 break;
             case 5:
                 document.getElementById('noBtn').innerHTML = 'Solo piénsalo, ¿sí?';
-                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
                 // Ocultar la imagen anterior (customSadImg5)
                 let customSadImg5b = document.getElementById('customSadImg5');
                 if (customSadImg5b) customSadImg5b.style.display = 'none';
@@ -371,7 +350,7 @@
                 break;
             case 6:
                 document.getElementById('noBtn').innerHTML = 'Me haría muy feliz volver a estar juntos';
-                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
                 // Mantener la nueva imagen visible
                 let customSadImg6b = document.getElementById('customSadImg6');
                 if (customSadImg6b) customSadImg6b.style.display = 'block';
@@ -381,7 +360,7 @@
                 break;
             case 7:
                 document.getElementById('noBtn').innerHTML = 'Aún guardo lindos recuerdos de nosotros';
-                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
                 // Mantener la nueva imagen visible
                 let customSadImg6c = document.getElementById('customSadImg6');
                 if (customSadImg6c) customSadImg6c.style.display = 'block';
@@ -391,7 +370,7 @@
                 break;
             case 8:
                 document.getElementById('noBtn').innerHTML = '¿No te gustaría volver a intentarlo?';
-                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
                 // Mantener la nueva imagen visible
                 let customSadImg6d = document.getElementById('customSadImg6');
                 if (customSadImg6d) customSadImg6d.style.display = 'block';
@@ -401,7 +380,7 @@
                 break;
             case 9:
                 document.getElementById('noBtn').innerHTML = 'Me haría muy feliz una Ultima oportunidad🥹.';
-                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
                 // Mantener la nueva imagen visible
                 let customSadImg6e = document.getElementById('customSadImg6');
                 if (customSadImg6e) customSadImg6e.style.display = 'block';
@@ -411,7 +390,7 @@
                 break;
             case 10:
                 document.getElementById('noBtn').innerHTML = 'Si no quieres, lo entenderé, pero me gustaría intentarlo.';
-                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
                 // Mantener la nueva imagen visible
                 let customSadImg6f = document.getElementById('customSadImg6');
                 if (customSadImg6f) customSadImg6f.style.display = 'block';
@@ -421,7 +400,7 @@
                 break;
             case 11:
                 document.getElementById('noBtn').innerHTML = 'Es en serio, ¿me das otra oportunidad?';
-                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
                 let customSadImg6g = document.getElementById('customSadImg6');
                 if (customSadImg6g) customSadImg6g.style.display = 'block';
                 document.getElementById('siBtn').style.fontSize = '200px';
@@ -430,7 +409,60 @@
                 break;
             case 12:
                 document.getElementById('noBtn').innerHTML = 'Me haría muy feliz volver a intentarlo🥹.';
-                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
                 let customSadImg6h = document.getElementById('customSadImg6');
                 if (customSadImg6h) customSadImg6h.style.display = 'block';
-                document.getElementById('si
+                document.getElementById('siBtn').style.fontSize = '220px';
+                document.getElementById('siBtn').style.padding = '140px 220px';
+                noButtonState++;
+                break;
+            case 13:
+                document.getElementById('noBtn').innerHTML = 'No quiero perderte para siempre :(';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
+                let customSadImg6i = document.getElementById('customSadImg6');
+                if (customSadImg6i) customSadImg6i.style.display = 'block';
+                document.getElementById('siBtn').style.fontSize = '240px';
+                document.getElementById('siBtn').style.padding = '150px 240px';
+                noButtonState++;
+                break;
+            case 14:
+                document.getElementById('noBtn').innerHTML = '¿Me dejas intentarlo una vez más?';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
+                let customSadImg6j = document.getElementById('customSadImg6');
+                if (customSadImg6j) customSadImg6j.style.display = 'block';
+                document.getElementById('siBtn').style.fontSize = '260px';
+                document.getElementById('siBtn').style.padding = '160px 260px';
+                noButtonState++;
+                break;
+            case 15:
+                document.getElementById('noBtn').innerHTML = '¿Y si lo intentamos de nuevo?';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
+                let customSadImg6k = document.getElementById('customSadImg6');
+                if (customSadImg6k) customSadImg6k.style.display = 'block';
+                document.getElementById('siBtn').style.fontSize = '280px';
+                document.getElementById('siBtn').style.padding = '170px 280px';
+                noButtonState++;
+                break;
+            case 16:
+                document.getElementById('noBtn').innerHTML = 'Luisa Fernanda Amaya Molina 😩por favooooooor, regresa conmigo';
+                document.getElementById('noBtn').style.backgroundColor = '#512E5F'; // Morado Oscuro
+                let customSadImg6l = document.getElementById('customSadImg6');
+                if (customSadImg6l) customSadImg6l.style.display = 'block';
+                document.getElementById('sadGifContainer').style.display = 'none';
+                document.getElementById('sadGifContainer1').style.display = 'none';
+                document.getElementById('sadGifContainer2').style.display = 'none';
+                document.getElementById('gifContainer').style.display = 'block';
+                document.getElementById('happyGifContainer').style.display = 'none';
+                if (customSadImg6l) customSadImg6l.style.display = 'none';
+                noButtonState = 0;
+                break;
+
+            default:
+                // Por si acaso, maneja cualquier otro caso aquí
+                break;
+        }
+    });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
